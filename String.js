@@ -7,7 +7,7 @@ class String{
         length: 10
     }
     this.pointB = pointB;
-    this.string = constrant.create(options);
+    this.string = constrant.create(option);
     World.add(world,this.string);
 }
 display(){

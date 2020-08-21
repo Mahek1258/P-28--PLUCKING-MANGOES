@@ -8,7 +8,7 @@ var string,tree,stone;
 function preload()
 {
 	image('Plucking mangoes/boy.png',200,200,50,50);
-	imageMode(CENTER);
+	
 }
 
 function setup() {
@@ -19,6 +19,7 @@ function setup() {
 	world = engine.world;
 
 	//Create the Bodies Here.
+	
 	stone = new Stone(200,50,20,20);
 	string = new String(stone,200,150);
 	tree = new Tree(400,400,50,100);
