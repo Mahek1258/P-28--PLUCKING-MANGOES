@@ -3,14 +3,15 @@ const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
 const Body = Matter.Body;
-var string,tree,stone;
-
+const Constraint = Matter.Constraint;
+var string,tree,stone,boy;
+var engine , world;
 function preload()
 {
-	image('Plucking mangoes/boy',200,200,50,50);
 	
+	boy = loadImage("Plucking mangos/boy.png");
 }
-
+ 
 function setup() {
 	createCanvas(800, 700);
 
@@ -20,21 +21,20 @@ function setup() {
 
 	//Create the Bodies Here.
 	
-	stone = new Stone(200,50,20,20);
-	string = new String(stone,{x:200,y:150});
-	tree = new Tree(400,400,50,100);
+	stone = new Stone(200,400,20,20);
+	string = new String(stone.body,{x:200,y:400});
+	tree = new Tree(500,520,300,400);
 	Engine.run(engine);
   
 }
 
 
 function draw() {
-  rectMode(CENTER);
-  background(0);
+  background(100,300);
+  image(boy,200,400,100,100);
   stone.display();
   string.display();
   tree.display();
-  drawSprites();
  
 }
 
