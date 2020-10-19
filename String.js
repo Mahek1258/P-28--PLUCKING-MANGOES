@@ -3,7 +3,7 @@ class String{
     var option={
         bodyA: bodyA,
         pointB:pointB,
-        stiffness:0.004,
+        stiffness:0.04,
         length: 10
     }
     this.pointB = pointB;
