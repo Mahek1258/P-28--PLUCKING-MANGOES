@@ -1,11 +1,11 @@
 class Mango{
-    constructor(x, y,) {
+    constructor(x, y) {
         var options = {
             'restitution':0,
             'friction':1.0,
             'isstatic': true,
         }
-        this.body = Bodies.circle(x, y,20,20, options);
+        this.body = Bodies.circle(x, y,20, options);
         this.radius = 20;
         this.image = loadImage("Plucking mangoes/mango.png");
         World.add(world, this.body);

@@ -11,8 +11,9 @@ var mango1 ,mango2 , mango3 ,mango4 ,mango5 ;
 var engine , world;
 function preload()
 {
-	
+	//loading images
 	boy = loadImage("Plucking mangoes/boy.png");
+	tree = loadImage("Plucking mangoes/tree.png");
 }
  
 function setup() {
@@ -26,7 +27,6 @@ function setup() {
 	
 	stone = new Stone(200,400,20,20);
 	string = new String(stone.body,{x:125,y:650});
-	tree = new Tree(500,520,300,400);
 
 	mango1 = new Mango(500,500)
 	Engine.run(engine);
@@ -35,13 +35,15 @@ function setup() {
 
 
 function draw() {
-  background(100,300);
+  background(0,200,255);
+
+  //drawing images
   image(boy,100,625,100,100);
+  image(tree,500,300,250,400);
 
   //display
   stone.display();
   string.display();
-  tree.display();
  mango1.display();
 }
 
