@@ -3,10 +3,10 @@ class Mango{
         var options = {
             'restitution':0,
             'friction':1.0,
-            'isstatic': true,
+            'isStatic': true,
         }
-        this.body = Bodies.circle(x, y,20, options);
-        this.radius = 20;
+        this.body = Bodies.circle(x, y,30, options);
+        this.radius = 30;
         this.image = loadImage("Plucking mangoes/mango.png");
         World.add(world, this.body);
       }
@@ -14,9 +14,8 @@ class Mango{
         var pos = this.body.position;
         push();
         translate(pos.x, pos.y);
-        ellipseMode(this.radius);
-        ellipse(0, 0, this.radius,this.radius);
-        image(this.image,-35,-50,this.radius+50,this.radius+50);
+        imageMode(CENTER);
+        image(this.image,0,0,this.radius,this.radius);
         pop();
         }
 }

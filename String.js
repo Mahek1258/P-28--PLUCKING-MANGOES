@@ -10,6 +10,10 @@ class String{
     this.string = Constraint.create(option);
     World.add(world,this.string);
 }
+fly(){
+    this.string.bodyA = null;
+}
+
 display(){
     var pointA = this.string.bodyA.position;
     var pointB = this.pointB;
