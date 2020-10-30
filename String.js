@@ -13,12 +13,16 @@ class String{
 fly(){
     this.string.bodyA = null;
 }
-
+attach(body){
+    this.string.bodyA = body;
+}
 display(){
+    if(this.string.bodyA){
     var pointA = this.string.bodyA.position;
     var pointB = this.pointB;
     strokeWeight(4);
     line(pointA.x,pointA.y,pointB.x,pointB.y)
+    }
 }
 
 }

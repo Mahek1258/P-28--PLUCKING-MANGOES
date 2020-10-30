@@ -5,7 +5,7 @@ const Bodies = Matter.Bodies;
 const Body = Matter.Body;
 const Constraint = Matter.Constraint;
 
-var string,tree,stone,boy;
+var string,tree,stone,boy,ground;
 var mango1 ,mango2 , mango3 ,mango4 ,mango5 ,mango6;
 
 var engine , world;
@@ -25,7 +25,7 @@ function setup() {
 
 	//Create the Bodies Here.
 	
-	stone = new Stone(200,400,20,20);
+	stone = new Stone(200,400,40);
 	string = new String(stone.body,{x:125,y:650});
 
 	mango1 = new Mango(560,470);
@@ -43,6 +43,7 @@ function setup() {
 function draw() {
   background(0,200,255);
 
+  ground = createSprite(400,697.5,800,5);
   //drawing images
   image(boy,100,625,100,100);
   image(tree,500,300,250,400);
@@ -63,6 +64,8 @@ function draw() {
  mango4.display();
  mango5.display();
  mango6.display();
+
+ drawSprites();
 }
 
 function mouseDragged(){
@@ -75,12 +78,17 @@ function mouseReleased(){
 }
 
 function detectCollision(stone,mango){
-mangoBodyPos = mango.body.position;
-stoneBodyPos = stone.body.position;
+var mangoBodyPos = mango.body.position;
+var stoneBodyPos = stone.body.position;
 
 var distance = dist(stoneBodyPos.x , stoneBodyPos.y , mangoBodyPos.x , mangoBodyPos.y);
 if(distance<=mango.radius + stone.radius){
 	Matter.Body.setStatic(mango.body,false);
 }
 
+}
+function keyPressed(){
+	if(keyCode === 32){
+	string.attach(stone.body);
+	}
 }
