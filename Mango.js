@@ -1,4 +1,4 @@
-class Mango{
+ class Mango{
     constructor(x, y) {
         var options = {
             'restitution':0,

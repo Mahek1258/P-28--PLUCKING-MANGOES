@@ -35,6 +35,7 @@ function setup() {
 	mango5 = new Mango(650,410);
 	mango6 = new Mango(680,450);
 
+	ground = new Ground();
 	Engine.run(engine);
   
 }
@@ -43,7 +44,6 @@ function setup() {
 function draw() {
   background(0,200,255);
 
-  ground = createSprite(400,697.5,800,5);
   //drawing images
   image(boy,100,625,100,100);
   image(tree,500,300,250,400);
@@ -65,7 +65,7 @@ function draw() {
  mango5.display();
  mango6.display();
 
- drawSprites();
+ ground.display();
 }
 
 function mouseDragged(){
